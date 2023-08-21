@@ -6,6 +6,7 @@ class GamesController < ApplicationController
     @letters = []
     @letters << ('A'..'Z').to_a.sample until @letters.size == 10
   end
+
   def score
     @attempt = params[:word]
     if valid_attempt?(@attempt)
