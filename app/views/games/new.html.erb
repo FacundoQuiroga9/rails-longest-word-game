@@ -1,0 +1,15 @@
+<h1>Your letters</h1>
+<div class='container my-4'>
+<% @letters.each do |letter| %>
+ <h2 class='d-inline m-4 bg-primary p-4 text-white rounded'> <%=letter %> </h2>
+<%  end %> 
+</div>
+<div class='container my-5'>
+<form action="/score" method="POST" data-turbo="false"> 
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="word" id="">
+  <input type="submit" value="Enviar">
+</form>
+</div>
+
+<div> <%= @score %> </div>
